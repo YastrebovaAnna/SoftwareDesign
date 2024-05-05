@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuthenticatorLibrary\AuthenticatorLibrary.csproj" />
+    <ProjectReference Include="..\CharacterBuilderLib\CharacterBuilderLib.csproj" />
+    <ProjectReference Include="..\Production OfEquipment\ProductionOfEquipment.csproj" />
+    <ProjectReference Include="..\VideoSubscriptionProject\VideoSubscriptionProject.csproj" />
+    <ProjectReference Include="..\VirusLibrary\VirusLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

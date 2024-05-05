@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{C3A2A177-6409-49D8-8224-2533F0A316AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSubscriptionProject", "VideoSubscriptionProject\VideoSubscriptionProject.csproj", "{F481E99A-C59B-4667-B494-A9E1C7018D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionOfEquipment", "Production OfEquipment\ProductionOfEquipment.csproj", "{53ADC7B9-1FBB-45A7-A68F-4AB0F641C9FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticatorLibrary", "AuthenticatorLibrary\AuthenticatorLibrary.csproj", "{2D130214-D561-45FE-BAF8-60E23B933389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusLibrary", "VirusLibrary\VirusLibrary.csproj", "{9E30496C-C58C-49C4-841E-8B346B1C850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterBuilderLib", "CharacterBuilderLib\CharacterBuilderLib.csproj", "{3C3D03AE-29E8-432C-9FC8-079B882F7D85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A2A177-6409-49D8-8224-2533F0A316AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A2A177-6409-49D8-8224-2533F0A316AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A2A177-6409-49D8-8224-2533F0A316AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A2A177-6409-49D8-8224-2533F0A316AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F481E99A-C59B-4667-B494-A9E1C7018D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F481E99A-C59B-4667-B494-A9E1C7018D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F481E99A-C59B-4667-B494-A9E1C7018D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F481E99A-C59B-4667-B494-A9E1C7018D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53ADC7B9-1FBB-45A7-A68F-4AB0F641C9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ADC7B9-1FBB-45A7-A68F-4AB0F641C9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ADC7B9-1FBB-45A7-A68F-4AB0F641C9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ADC7B9-1FBB-45A7-A68F-4AB0F641C9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D130214-D561-45FE-BAF8-60E23B933389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D130214-D561-45FE-BAF8-60E23B933389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D130214-D561-45FE-BAF8-60E23B933389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D130214-D561-45FE-BAF8-60E23B933389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E30496C-C58C-49C4-841E-8B346B1C850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E30496C-C58C-49C4-841E-8B346B1C850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E30496C-C58C-49C4-841E-8B346B1C850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E30496C-C58C-49C4-841E-8B346B1C850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3D03AE-29E8-432C-9FC8-079B882F7D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3D03AE-29E8-432C-9FC8-079B882F7D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3D03AE-29E8-432C-9FC8-079B882F7D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3D03AE-29E8-432C-9FC8-079B882F7D85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {706BCB21-3FCB-4CEC-AD0B-66969EA5A55E}
+	EndGlobalSection
+EndGlobal
