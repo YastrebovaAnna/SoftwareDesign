@@ -1,0 +1,3 @@
+﻿This file is restricted.
+Attempting to read this file should show "Access denied!".
+Access should be limited for specific files.
