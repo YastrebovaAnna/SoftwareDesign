@@ -14,9 +14,15 @@ namespace LightHTML
         {
             Text = text;
         }
+
         public override void OuterHTML()
         {
+            TextMethod();
             Console.Write(Text);
+        }
+        public override void OnRemoved()
+        {
+            Console.WriteLine($"\nText '{Text}' was removed");
         }
     }
 }
