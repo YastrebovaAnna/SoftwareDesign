@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightHTML.visitor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,10 @@ namespace LightHTML
         public override void OuterHTML()
         {
             Console.Write(Text);
+        }
+        public override void Accept(ILightNodeVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }

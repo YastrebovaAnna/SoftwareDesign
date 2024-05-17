@@ -1,4 +1,5 @@
 ﻿using LightHTML.enums;
+using LightHTML.visitor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,14 @@ namespace LightHTML
             foreach (var child in Children)
             {
                 child.OuterHTML();
+            }
+        }
+        public override void Accept(ILightNodeVisitor visitor)
+        {
+            visitor.Visit(this);
+            foreach (var child in Children)
+            {
+                child.Accept(visitor);
             }
         }
     }

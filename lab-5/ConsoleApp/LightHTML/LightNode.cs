@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightHTML.visitor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace LightHTML
     public abstract class LightNode
     {
         public abstract void OuterHTML();
+        public abstract void Accept(ILightNodeVisitor visitor);
     }
 }
