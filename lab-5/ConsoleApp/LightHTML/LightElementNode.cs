@@ -1,10 +1,8 @@
-﻿using LightHTML.enums;
+using Iterator;
+using LightHTML.enums;
 using LightHTML.state;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LightHTML
 {
@@ -29,6 +27,7 @@ namespace LightHTML
             _state = state;
             _state.Handle(this);
         }
+
         public void AddChild(LightNode child)
         {
             Children.Add(child);
@@ -38,6 +37,7 @@ namespace LightHTML
         {
             CssClasses.Add(cssClass);
         }
+
         public override void OuterHTML()
         {
             Console.Write($"<{TagName}");
@@ -63,5 +63,16 @@ namespace LightHTML
                 child.OuterHTML();
             }
         }
+
+        public override IIterator GetDepthFirstIterator()
+        {
+            return new DfsIterator(this);
+        }
+
+        public override IIterator GetBreadthFirstIterator()
+        {
+            return new BfsIterator(this);
+        }
     }
+
 }

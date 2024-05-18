@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHTML", "LightHTML\LightHTML.csproj", "{3ACF540C-6E5B-4EEC-BD92-AB0214D0F44E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHTML", "LightHTML\LightHTML.csproj", "{3ACF540C-6E5B-4EEC-BD92-AB0214D0F44E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
