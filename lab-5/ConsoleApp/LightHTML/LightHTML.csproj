@@ -54,10 +54,12 @@
     <Compile Include="LightNode.cs" />
     <Compile Include="LightTextNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="template\Hooks.cs" />
     <Compile Include="state\ActiveState.cs" />
     <Compile Include="state\DisabledState.cs" />
     <Compile Include="state\InactiveState.cs" />
     <Compile Include="state\IState.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ using LightHTML.command;
 using System.Windows.Input;
 using ICommand = LightHTML.command.ICommand;
 using Iterator;
+using System;
 
 public class Program
 {

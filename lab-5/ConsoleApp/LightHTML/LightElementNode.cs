@@ -1,6 +1,7 @@
 using Iterator;
 using LightHTML.enums;
 using LightHTML.state;
+using LightHTML.template;
 using System;
 using System.Collections.Generic;
 
@@ -15,13 +16,16 @@ namespace LightHTML
         public List<LightNode> Children { get; set; } = new List<LightNode>();
 
         private IState _state;
+
         public LightElementNode(string tagName, DisplayType display, ClosingType closing)
         {
             TagName = tagName;
             Display = display;
             Closing = closing;
             _state = new InactiveState();
+            CreateMethod();
         }
+
         public void SetState(IState state)
         {
             _state = state;
@@ -31,6 +35,14 @@ namespace LightHTML
         public void AddChild(LightNode child)
         {
             Children.Add(child);
+        }
+
+        public void RemoveChild(LightNode child)
+        {
+            if (Children.Remove(child))
+            {
+                child.OnRemoved();
+            }
         }
 
         public void AddCssClass(string cssClass)
@@ -61,7 +73,29 @@ namespace LightHTML
             foreach (var child in Children)
             {
                 child.OuterHTML();
+                if (child is LightTextNode)
+                    TextMethod();
             }
+        }
+
+        public override void OnCreate()
+        {
+            Console.WriteLine($"{TagName} was created");
+        }
+
+        public override void OnInserted()
+        {
+            Console.WriteLine($"{TagName} was inserted");
+        }
+
+        public override void OnTextRendered()
+        {
+            Console.Write("Text was rendered");
+        }
+
+        public override void OnRemoved()
+        {
+            Console.Write($"{TagName} was removed");
         }
 
         public override IIterator GetDepthFirstIterator()
@@ -74,5 +108,4 @@ namespace LightHTML
             return new BfsIterator(this);
         }
     }
-
 }
