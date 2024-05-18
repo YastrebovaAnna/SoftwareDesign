@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightHTML.enums
+namespace LightHTML.command
 {
-    public enum DisplayType
+    public interface ICommand
     {
-        Block,
-        Inline,
-        None,
-        Hidden,
-        Visible
+        void Execute();
+        void Undo();
     }
 }

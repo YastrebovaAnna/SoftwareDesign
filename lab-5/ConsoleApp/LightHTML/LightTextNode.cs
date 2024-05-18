@@ -1,4 +1,5 @@
-﻿using LightHTML.visitor;
+using LightHTML.visitor;
+using Iterator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,31 @@ namespace LightHTML
         {
             Text = text;
         }
+
         public override void OuterHTML()
         {
+            TextMethod();
             Console.Write(Text);
         }
+
         public override void Accept(ILightNodeVisitor visitor)
         {
             visitor.Visit(this);
+        }
+
+        public override void OnRemoved()
+        {
+            Console.WriteLine($"\nText '{Text}' was removed");
+        }
+
+        public override IIterator GetDepthFirstIterator()
+        {
+            return new DfsIterator(this);
+        }
+
+        public override IIterator GetBreadthFirstIterator()
+        {
+            return new BfsIterator(this);
         }
     }
 }
