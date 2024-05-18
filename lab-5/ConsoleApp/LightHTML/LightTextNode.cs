@@ -1,4 +1,5 @@
-﻿using System;
+using Iterator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace LightHTML
             TextMethod();
             Console.Write(Text);
         }
+
         public override void OnRemoved()
         {
             Console.WriteLine($"\nText '{Text}' was removed");
+        }
+
+        public override IIterator GetDepthFirstIterator()
+        {
+            return new DfsIterator(this);
+        }
+
+        public override IIterator GetBreadthFirstIterator()
+        {
+            return new BfsIterator(this);
         }
     }
 }

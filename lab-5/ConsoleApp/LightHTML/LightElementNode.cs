@@ -1,11 +1,9 @@
-﻿using LightHTML.enums;
+using Iterator;
+using LightHTML.enums;
+using LightHTML.state;
 using LightHTML.template;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace LightHTML
 {
@@ -17,18 +15,28 @@ namespace LightHTML
         public List<string> CssClasses { get; set; } = new List<string>();
         public List<LightNode> Children { get; set; } = new List<LightNode>();
 
+        private IState _state;
+
         public LightElementNode(string tagName, DisplayType display, ClosingType closing)
         {
             TagName = tagName;
             Display = display;
             Closing = closing;
+            _state = new InactiveState();
             CreateMethod();
+        }
+
+        public void SetState(IState state)
+        {
+            _state = state;
+            _state.Handle(this);
         }
 
         public void AddChild(LightNode child)
         {
             Children.Add(child);
         }
+
         public void RemoveChild(LightNode child)
         {
             if (Children.Remove(child))
@@ -36,6 +44,7 @@ namespace LightHTML
                 child.OnRemoved();
             }
         }
+
         public void AddCssClass(string cssClass)
         {
             CssClasses.Add(cssClass);
@@ -68,6 +77,7 @@ namespace LightHTML
                     TextMethod();
             }
         }
+
         public override void OnCreate()
         {
             Console.WriteLine($"{TagName} was created");
@@ -77,13 +87,25 @@ namespace LightHTML
         {
             Console.WriteLine($"{TagName} was inserted");
         }
+
         public override void OnTextRendered()
         {
-            Console.Write($"Text was rendered");
+            Console.Write("Text was rendered");
         }
+
         public override void OnRemoved()
         {
             Console.Write($"{TagName} was removed");
+        }
+
+        public override IIterator GetDepthFirstIterator()
+        {
+            return new DfsIterator(this);
+        }
+
+        public override IIterator GetBreadthFirstIterator()
+        {
+            return new BfsIterator(this);
         }
     }
 }
