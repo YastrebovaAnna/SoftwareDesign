@@ -1,6 +1,7 @@
-﻿using LightHTML;
-using LightHTML.command;
+using LightHTML;
 using LightHTML.enums;
+using LightHTML.state;
+using LightHTML.command;
 using System.Windows.Input;
 using ICommand = LightHTML.command.ICommand;
 using Iterator;
@@ -43,6 +44,9 @@ public class Program
         Console.Write("Current HTML: ");
         elementNode.OuterHTML();
         Console.WriteLine();
+
+        elementNode.SetState(new ActiveState());
+        elementNode.SetState(new DisabledState());
 
         LightElementNode html = new LightElementNode("html", DisplayType.Block, ClosingType.Paired);
         LightElementNode body = new LightElementNode("body", DisplayType.Block, ClosingType.Paired);

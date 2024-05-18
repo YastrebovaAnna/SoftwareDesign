@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightHTML.enums
+namespace LightHTML.state
 {
-    public enum DisplayType
+    public interface IState
     {
-        Block,
-        Inline,
-        None,
-        Hidden,
-        Visible
+        void Handle(LightElementNode node);
     }
 }
