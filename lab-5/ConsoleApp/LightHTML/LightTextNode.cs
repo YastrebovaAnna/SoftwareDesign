@@ -1,3 +1,4 @@
+using LightHTML.visitor;
 using Iterator;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace LightHTML
         {
             TextMethod();
             Console.Write(Text);
+        }
+
+        public override void Accept(ILightNodeVisitor visitor)
+        {
+            visitor.Visit(this);
         }
 
         public override void OnRemoved()

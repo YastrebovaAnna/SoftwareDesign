@@ -2,6 +2,7 @@ using LightHTML;
 using LightHTML.enums;
 using LightHTML.state;
 using LightHTML.command;
+using LightHTML.visitor;
 using System.Windows.Input;
 using ICommand = LightHTML.command.ICommand;
 using Iterator;
@@ -91,5 +92,21 @@ public class Program
             node.OuterHTML();
             Console.WriteLine();
         }
+      
+        var root = new LightElementNode("div", DisplayType.Block, ClosingType.Paired);
+        root.AddCssClass("container");
+        root.AddChild(new LightTextNode("Hello, World!"));
+
+        var child = new LightElementNode("p", DisplayType.Block, ClosingType.Paired);
+        child.AddChild(new LightTextNode("This is a paragraph."));
+        root.AddChild(child);
+
+        root.OuterHTML();
+
+        var visitor = new NodeCounterVisitor();
+        root.Accept(visitor);
+
+        Console.WriteLine($"\nElement Nodes: {visitor.ElementNodeCount}");
+        Console.WriteLine($"Text Nodes: {visitor.TextNodeCount}");
     }
 }

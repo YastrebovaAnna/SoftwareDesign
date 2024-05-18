@@ -2,6 +2,7 @@ using Iterator;
 using LightHTML.enums;
 using LightHTML.state;
 using LightHTML.template;
+using LightHTML.visitor;
 using System;
 using System.Collections.Generic;
 
@@ -106,6 +107,15 @@ namespace LightHTML
         public override IIterator GetBreadthFirstIterator()
         {
             return new BfsIterator(this);
+        }
+        
+        public override void Accept(ILightNodeVisitor visitor)
+        {
+            visitor.Visit(this);
+            foreach (var child in Children)
+            {
+                child.Accept(visitor);
+            }
         }
     }
 }

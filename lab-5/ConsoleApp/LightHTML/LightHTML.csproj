@@ -59,6 +59,8 @@
     <Compile Include="state\DisabledState.cs" />
     <Compile Include="state\InactiveState.cs" />
     <Compile Include="state\IState.cs" />
+    <Compile Include="visitor\ILightNodeVisitor.cs" />
+    <Compile Include="visitor\NodeCounterVisitor.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
